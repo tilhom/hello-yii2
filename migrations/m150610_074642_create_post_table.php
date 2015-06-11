@@ -11,9 +11,9 @@ class m150610_074642_create_post_table extends Migration
     	$this->createTable( 
     		'post', 
     		[
-    		'id'=>Schema::TYPE_PK,
-    		'post'=>Schema::TYPE_TEXT,
-    		'user_id'=>Schema::TYPE_INTEGER,
+    		'id'=>'pk',
+    		'post'=>'text',
+    		'user_id'=>'int',
     		]
     	);
     	$this->addForeignKey( 

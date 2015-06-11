@@ -10,9 +10,9 @@ class m150610_063342_create_user_table extends Migration
     {
     	$table='user';
     	$columns=[
-    		'id'=>Schema::TYPE_PK,
-    		'password'=>Schema::TYPE_STRING.' NOT NULL',
-    		'email'=>Schema::TYPE_STRING.' NOT NULL',
+    		'id'=>'pk',
+    		'password'=>'string NOT NULL',
+    		'email'=>'string NOT NULL',
     	];
 
     	$this->createTable( $table, $columns);

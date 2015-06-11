@@ -1,7 +1,4 @@
-
 /config/db.php
-
-log.todo
 
 # phpstorm project files
 .idea
