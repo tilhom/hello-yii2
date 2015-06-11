@@ -1,61 +1,61 @@
-10.06.15
-reload server: sudo /etc/init.d/apache2 restart
+10.06.15:
+    reload server: sudo /etc/init.d/apache2 restart
 
-01 - Установка Yii2 Framework на Windows. Yii Bacis Application. phpNT
-=======================================================================
+    01 - Установка Yii2 Framework на Windows. Yii Bacis Application. phpNT
+    =======================================================================
 
-1. Открываем сайт http://yiiframework.com/downloads
-2. Скачиваем архив 
+    1. Открываем сайт http://yiiframework.com/downloads
+    2. Скачиваем архив 
 
-https://github.com/yiisoft/yii2/releases/download/2.0.4/yii-basic-app-2.0.4.tgz
+    https://github.com/yiisoft/yii2/releases/download/2.0.4/yii-basic-app-2.0.4.tgz
 
-3. Распаковываем архив
+    3. Распаковываем архив
 
-4. Проверяем окружение 
+    4. Проверяем окружение 
 
-http://localhost/basic/requirements.php
+    http://localhost/basic/requirements.php
 
-5. Конфигурируем секретный ключ безопасности в файле config/web.php
+    5. Конфигурируем секретный ключ безопасности в файле config/web.php
 
-'components' => [
+    'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'UzbekYii2Programmer',
 
-6. Запускаем стартовое окно
-	http://localhost/basic/web/index.php
+    6. Запускаем стартовое окно
+    http://localhost/basic/web/index.php
 
 
-02 - Применение миграций в Yii2. phpNT
-=========================================
-1. Знакомимся с документацией 
-```
-http://www.yiiframework.com/doc-2.0/yii-db-querybuilder.html
-http://www.yiiframework.com/doc-2.0/yii-db-querybuilder.html#createTable()-detail
-http://www.yiiframework.com/doc-2.0/yii-db-querybuilder.html#getColumnType()-detail
-```
+    02 - Применение миграций в Yii2. phpNT
+    =========================================
+    1. Знакомимся с документацией 
+    ```
+    http://www.yiiframework.com/doc-2.0/yii-db-querybuilder.html
+    http://www.yiiframework.com/doc-2.0/yii-db-querybuilder.html#createTable()-detail
+    http://www.yiiframework.com/doc-2.0/yii-db-querybuilder.html#getColumnType()-detail
+    ```
 
-2. Создаем новую базу данных yii2basic
+    2. Создаем новую базу данных yii2basic
 
 
-3. Подключаем БД к приложению
+    3. Подключаем БД к приложению
 
-```php
-return [
+    ```php
+    return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=yii2basic',
     'username' => 'root',
     'password' => 'your-password',
     'charset' => 'utf8',
     ]
-```
-4. Создаем файл миграции 
-```
-php yii migrate/create create_user_table
-```
-5. Редактируем файл миграции под свою таблицу
-```
-public function up()
+    ```
+    4. Создаем файл миграции 
+    ```
+    php yii migrate/create create_user_table
+    ```
+    5. Редактируем файл миграции под свою таблицу
+    ```
+    public function up()
     {
     	$table='user';
     	$columns=[
@@ -72,20 +72,20 @@ public function up()
         $this->dropTable('user');
     }
 
-```
-6. Поднимаем миграцию
-	```
-	yii migrate
-	```
-7. Создаем файл миграции 
-```
-php yii migrate/create create_post_table
-```
-8. Редактируем файл миграции под свою таблицу
-```
-public function saveUp()
+    ```
+    6. Поднимаем миграцию
+    ```
+    yii migrate
+    ```
+    7. Создаем файл миграции 
+    ```
+    php yii migrate/create create_post_table
+    ```
+    8. Редактируем файл миграции под свою таблицу
+    ```
+    public function saveUp()
     {
- 
+
     	$this->createTable( 
     		'post', 
     		[
@@ -108,22 +108,47 @@ public function saveUp()
         $this->dropTable('post');
     }
 
-```
-9. Поднимаем миграцию
-	```
-	yii migrate
-	```
-10. Просмотреть историю миграций 
-```
-yii migrate/history
-```
+    ```
+    9. Поднимаем миграцию
+    ```
+    yii migrate
+    ```
+    10. Просмотреть историю миграций 
+    ```
+    yii migrate/history
+    ```
 
 11.06.15:
 
-     Загрузка репозитария на GitHub:
-         ☐ Создаем Git репозитарий.
-         ☐ Редактируем readme.md composer.json
-         ☐ Копируем локальный репу на удаленный сервер
-         ☐ Добавляем в исключения db.php
+        03 - Миграции в Yii2.  Абстрактный класс Schema. phpNT:
+            ✔ Создать миграции используя помощь http://www.yiiframework.com/doc-2.0/yii-db-schema.html @done (15-06-11 11:30)
+        04 - Создание простого Yii2 приложения 'Привет МИР!!!'. phpNT:
+            ✔ Просмотрено @done (15-06-11 11:45)
 
+        05 - Добавление CSS, JS, JQuery и других ресурсов в Yii2 приложение. Часть 1. phpNT:
+            ✔ Class yii\web\AssetBundle  http://www.yiiframework.com/doc-2.0/yii-web-assetbundle.html @done (15-06-11 11:58)
+        06 - Добавление CSS, JS, JQuery и других ресурсов в Yii2 приложение. Часть 2. phpNT:
+            ✔ http://www.yiiframework.com/doc-2.0/yii-web-view.html @done (15-06-11 12:11)
+             с помощью методов этого класса можно в конретном представлении подключать css, js файлы: registerCss(), registerCssFile(), registerJs(), registerJsFile()
+             а также подключать другие служебные файлы в раздел <head>, например: registerLinkTag(), registerMetaTag().
+         Загрузка репозитария на GitHub:
+             ✔ Создаем Git репозитарий. @done (15-06-11 10:11)
+                    git init
+                    git add .
+                    git commit -m "1 commit"
 
+             ✔ Редактируем readme.md composer.json @done (15-06-11 10:11)
+
+             ✔ Копируем локальный репу на удаленный сервер @done (15-06-11 10:11)
+             git remote add origin https://github.com/tilhom/hello-yii2.git
+             git push -u origin master
+             
+             ✔ Добавляем в исключения db.php @done (15-06-11 10:11)
+
+12.06.15:
+
+13.06.15:
+
+14.06.15:
+
+15.06.15:
