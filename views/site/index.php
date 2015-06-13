@@ -1,8 +1,43 @@
 <?php
+use app\components\FirstWidget;
+use app\components\SecondWidget;
+use yii\bootstrap\Modal;
+use yii\jui\DatePicker;
 /* @var $this yii\web\View */
 $this->title = 'My Yii Application';
+
 ?>
 <div class="site-index">
+<?= FirstWidget::widget(
+[
+    'a'=>33, 'b'=>67,
+]
+); ?>
+
+<?php SecondWidget::begin() ?>
+
+Этот текст сделаем красным.
+
+<?php SecondWidget::end() ?>
+
+<?php
+Modal::begin([
+    'header' => '<h2>Привет МИР!</h2>',
+    'toggleButton' => ['label' => 'Нажми на меня..'],
+]);
+
+echo 'Это контент модального окна...';
+
+Modal::end();
+?>
+
+<?php 
+echo DatePicker::widget([
+    'attribute' => 'from_date',
+    'language' => 'ru',
+    'dateFormat' => 'dd-MM-yyyy',
+]);
+ ?>
 
     <div class="jumbotron">
         <h1>Congratulations!</h1>
