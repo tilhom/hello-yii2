@@ -12,6 +12,45 @@ $config = [
     'language'=>'ru_RU',
     'charset'=>'UTF-8',
     'components' => [
+        'urlManager'=>[
+            'enablePrettyUrl'=> true,
+            'showScriptName'=>false,
+            'enableStrictParsing'=> true,
+            'rules'=>[
+                [
+                    'pattern'=>'/',
+                    'route'=>'main/index',
+                    'suffix'=>'.html'
+                ],
+                [
+                    'pattern'=>'найти-<search:\w*>',
+                    'route'=>'main/search',
+                    'suffix'=>'.html'
+                ],
+
+                [
+                    'pattern'=>'<controller>/<action>/<id:\d+>',
+                    'route'=>'<controller>/<action>',
+                    'suffix'=>''
+                ],
+                [
+                    'pattern'=>'<controller>/<action>',
+                    'route'=>'<controller>/<action>',
+                    'suffix'=>'.html'
+                ],
+                [
+                    'pattern'=>'<module>/<controller>/<action>/<id:\d+>',
+                    'route'=>'<module>/<controller>/<action>',
+                    'suffix'=>''
+                ],
+[
+                    'pattern'=>'<module>/<controller>/<action>',
+                    'route'=>'<module>/<controller>/<action>',
+                    'suffix'=>'.html'
+                ],
+
+            ]
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'UzbekYii2Programmer',
