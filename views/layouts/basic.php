@@ -59,6 +59,7 @@ AppAsset::register($this);
 			echo "</span></div>";
 
 		ActiveForm::end();
+
 		echo Nav::widget([
 				'items'=>[
 					[
@@ -81,12 +82,20 @@ AppAsset::register($this);
 					<a data-toggle="modal" data-target="#modal" style="cursor:pointer">
 					О проекте <span class="glyphicon glyphicon-question-sign"></span>
 					</a>
-					</li>'
+					</li>',
+				[
+					'label'=>'Регистрация',
+					'url'=>['main/reg']
 				],
+				[
+					'label'=>'Войти',
+					'url'=>['main/login']
+				],
+			],
 				'encodeLabels'=>false,
 				'options'=>[
-				'class'=>'navbar-nav navbar-right'
-				]
+					'class'=>'navbar-nav navbar-right'
+					]
 			]);
 
 		Modal::begin([
