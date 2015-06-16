@@ -5,6 +5,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\Modal;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use app\components\AlertWidget;
 /**
  * @var $content string
  */
@@ -111,6 +112,7 @@ AppAsset::register($this);
 	 ?>
 
 	<div class="container">
+		<?= AlertWidget::widget();?>
 		<?= $content ?>
 	</div>
 </div>
